@@ -1,0 +1,246 @@
+/* 全体 */
+body {
+  display: flex;/* 画像、文章を自由に配置する前提決め */
+  font-family: "Segoe UI", sans-serif;/*後ろは第二プラン*/
+  margin: 0;/*余白ゼロ*/
+  background-color: #0d0d0d; /* 全体の背景を黒に */
+  color: #ffffff; /* 全体文字色を明るい白に */
+}
+/*共通の画像文章配置*/
+.content-row {
+  display: flex;/* 横並びにする */
+  align-items: flex-start;/* 上揃え */
+  gap: 20px;/* 文章と画像の間隔 */
+}
+.content-row .text {
+  width: 60%;/*文章の幅*/
+}
+
+/* リスト基本設定 */
+.sidebar {
+  flex-shrink:0;/*リストの幅固定*/
+  width: 220px;
+  background: #121212; /* 少し明るめの黒で段差を作る */
+  border-right: 1px solid #222;
+  padding: 20px;/*20pxだけ内側に余白*/
+  box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.4);/*影つけて立体感を！（内側、影左に2px、影の調節、rgbaは黒色40%。）*/
+}
+
+/* リスト基本設定 */
+.sidebar ul {
+  list-style: none;/*箇条書きの点消す*/
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;/*ボタンの間隔開ける*/
+}
+
+/* ボタン（角なしの黒カード風） */
+.sidebar button,
+.sidebar a {
+  display: block;/*ボタンをブロックに*/
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05); /* 半透明の黒四角 */
+  border: none;
+  color: #f5f5f5;
+  text-align: left;
+  padding: 12px;
+  cursor: pointer;/*カーソルをリストの間だけ指に！！*/
+  border-radius: 0; /*角あり*/
+  font-size: 15px;
+  transition: all 0.2s ease;/*アニメーション。全てを0.2秒で*/
+}
+
+.sidebar button:hover,
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15); /* ホバーで少し明るく */
+}
+
+/* 開いた後（ドロップダウン）の操作 */
+.dropdown-content {
+  display: none;/*はじめは非表示*/
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;/*はみ出ても大丈夫*/
+  transition: max-height 0.3s ease;/*アニメーション*/
+}
+
+.dropdown-content.open {
+  display: block;
+  max-height: 200px;
+}
+
+/* メインコンテンツ */
+.content {
+  flex-grow: 1;/*右の画面に均一に広がる*/
+  padding: 30px;
+  background: #f2f2f2; /* 明るいグレー */
+  color: #111; /* 黒文字に変更 */
+  height: 100vh;/*画面をフッターに固定（？）*/
+}
+
+/* ページ切り替え */
+.page {
+  display: none;/*はじめは非表示*/
+  animation: fade 0.3s ease;
+}
+
+.page.active {/*ジャバと対応。activeでページを見せる*/
+  display: block;
+}
+
+/* 表示時のアニメーション */
+@keyframes fade {
+  from {/*透明で下に10px*/
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {/*元の位置に見えるようになる*/
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 見出しのデザイン */
+h1 {
+  border-bottom: 2px solid #444;/*見出しの下の線*/
+  padding-bottom: 5px;/*文字と線の間の余白*/
+  color: #000000;
+}
+
+#home ul li {/*ホームの文*/
+  font-size: 30px;
+  line-height: 1.8;
+}
+
+
+/*ここからは画像の配置とレイアウトのコード*/
+
+#home .photo-large {/*プロフィールの画像*/
+  width: 50%;
+  height: auto;
+  margin-left:auto;/*右寄せ*/
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*経歴の画像の配置*/
+.career-content {
+  align-items: flex-start; /*タイムラインと写真を上揃え*/
+  gap: 24px;
+}
+.text {/* 左側の文章 */
+  width: 60%; /* 文章の幅を調整 */
+}
+/*経歴写真*/
+.career-photos {
+  width: 260px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+/*経歴写真*/
+.career-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  object-fit: cover;
+  display: block;
+}
+/*タイムラインの幅*/
+.career-timeline {
+  flex: 1 1 60%; /**/
+  min-width: 280px;
+}
+
+/*ここから趣味画像のコード*/
+#dance .photos,
+#travel .photos,
+#food .photos{
+  display: flex;
+  flex-direction: column; /*縦に配置（大写真→小写真の順)*/
+  align-items: flex-end; /*全体を右寄せ*/
+  justify-content:flex-end;
+  gap: 20px;/*画像の間隔*/
+  width: 35%;/*全体の幅*/
+  margin-left:auto;/*右寄せ*/
+}
+/*画像のレイアウト*/
+#dance .photos img,
+#travel .photos img,
+#food .photos img{
+  width: 200px; /*縦並びなので同じ幅に統一*/
+  height: auto; /*比率維持*/
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /*比率崩さず切り抜き*/
+}
+
+
+
+
+
+
+/*ここからは追加。難しそうなら省略可*/
+
+
+/* スマホ用の表示（簡易）スマホのみ適応される*/
+@media (max-width: 700px) {
+  
+  .career-content {
+    flex-direction: column;
+  }
+  .career-photos {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .career-photo {
+    width: 32%;
+    min-width: 120px;
+  }
+  body {
+    flex-direction: column; /* サイドバーを上に */
+  }
+
+  .sidebar {/*サイドバーの調節*/
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding: 15px;
+  }
+
+  .sidebar ul {/*ボタンを横並びに*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sidebar li {/*下の余白消す*/
+    margin-bottom: 0;
+  }
+
+  .sidebar button,/*ボタンのサイズ変える*/
+  .sidebar a {
+    width: auto;
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .content {/*スマホ用調節*/
+    padding: 20px;
+    min-height: auto;
+  }
+
+  h1 {/*見出しを22px*/
+    font-size: 22px;
+  }
+
+  p {/*本文を15px*/
+    font-size: 15px;
+  }
+}

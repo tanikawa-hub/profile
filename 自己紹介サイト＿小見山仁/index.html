@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自己紹介サイト</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!--サイドバーの表示です-->
+  <nav class="sidebar">
+    <ul>
+      <li><button class="nav-btn" data-target="home">プロフィール</button></li>
+      <li><button class="nav-btn" data-target="career">経歴</button></li>
+      <li class="dropdown"><!--リストのこと-->
+        <button class="dropbtn">趣味 ▼</button>
+        <ul class="dropdown-content">
+          <li><button class="nav-btn" data-target="dance">ダンス</button></li>
+          <li><button class="nav-btn" data-target="travel">旅行</button></li>
+          <li><button class="nav-btn" data-target="food">ご飯</button></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="content"><!--メインページ-->
+    <div id="home" class="page active">
+      <h1>プロフィール</h1>
+    <div class="content-row">
+      <ul>
+        <li>小見山 仁（こみやま じん）</li>
+        <li>文教大学人間科学部所属</li>
+        <li>出身は宮城県。大学から上京</li>
+        <li>誕生日は11月11日</li>
+        <li>最近の息抜きは銭湯巡り</li>
+      </ul>
+<img src="images/main1.jpg" alt="ホーム写真" class="photo-large">
+    </div>
+</div>
+
+    <div id="career" class="page">
+      <h1>経歴</h1>
+
+      <!--ページを左右に分ける-->
+      <div class="content-row career-content">
+
+      <!--左側-->
+       <div class="career-timeline">
+    <div class="career-item">
+      <div class="year">2004</div>
+      <div class="event">
+       宮城県大崎市にて誕生
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="year">2011</div>
+      <div class="event">
+      地元の小学校へ入学
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="year">2017</div>
+      <div class="event">
+    古川黎明中学校へ入学<br>
+    小学生から続けていたためそのまま剣道部へ入部
+  </div>
+    </div>
+
+    <div class="career-item">
+      <div class="year">2020</div>
+      <div class="event">
+      古川黎明高校へ進学<br>
+      美術部と吟詠剣詩舞同好会へ入部
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="year">2022</div>
+      <div class="event">
+    課外活動で行っていた研究にて「科学技術振興機構理事長賞」受賞<br>
+    吟詠剣詩舞同好会では全国大会に出場<br>
+    美術部では「黒板アート甲子園動画の部」にて最優秀賞を受賞
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="year">2023</div>
+      <div class="event">
+      古川黎明高等学校卒業<br>
+      埼玉県の文教大学へ入学。<br>
+      心理学を学び始めると共にダンスサークルへ入会
+      </div>
+    </div>
+
+   <div class="career-item">
+      <div class="year">2024</div>
+      <div class="event">
+    サークルの企画運営の代表に抜擢される
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="year">2025</div>
+      <div class="event">
+      帰国を機に就職活動を開始<br>
+      ジョブコミットを通じて貴社と出会う</div>
+    </div>
+  </div>
+
+  <!--右側-->
+  <aside class="career-photos" aria-label="経歴の写真">
+      <img src="images/career1.jpg" alt="経歴ページ1" class="career-photo">
+      <img src="images/career2.jpg" alt="経歴ページ2" class="career-photo">
+      <img src="images/career3.jpg" alt="経歴ページ3" class="career-photo">
+      <img src="images/career4.jpg" alt="経歴ページ4" class="career-photo">
+      <img src="images/career5.jpg" alt="経歴ページ5" class="career-photo">
+      <img src="images/career6.jpg" alt="経歴ページ6" class="career-photo">
+      <img src="images/career7.jpg" alt="経歴ページ7" class="career-photo">
+    </aside>
+  </div>
+</div>
+<!--ここに</div>が入ってたから抜いた-->
+
+    <div id="dance" class="page">
+      <h1>ダンス</h1>
+
+      <!--ここから写真と文章をまとめたブロック-->
+      <div class="content-row">
+        <!--左側が文章-->
+        <div class="text">
+      <p>大学からストリートダンスを始めました。</p>
+      <p>ジャンルはアニメーションダンスとロックダンスをメインに踊っています。</p>
+      <p>1年目は手探りの状態から始め、経験者や先輩なら得た知識を基に練習を行いました。</p>
+      <p>段々と慣れ始めたころから自分に合うダンスの練習法や踊り方を模索し始めました。</p>
+      <p>現在はある程度型も決まってきており楽しく活動させていただいています。</p>
+      <p>同ジャンルには12人の同期がおり、プライベートでも遊ぶほど仲がいいです。</p>
+      <p>またOBの方の繋がりもあり学外での活動も行っております。</p>
+    </div>
+    <!--右側に写真3枚-->
+    <div class="photos">
+      <img src="images/schools1.jpg" alt="大きい写真">
+      <img src="images/schools2.jpg" alt="小さい写真1">
+      <img src="images/schools3.jpg" alt="小さい写真2">
+      </div>
+    </div>
+    </div>
+    <!--ここまでが写真と文章ブロック-->
+  </div>
+
+    <div id="travel" class="page">
+      <h1>旅行</h1>
+      <!--ここから写真と文章をまとめたブロック-->
+      <div class="content-row">
+        <!--左側が文章-->
+        <div class="text">
+      <p>長く続いている趣味の一つです。</p>
+      <p>幼少期から親の影響で旅行自体は好きでしたがあまり行っていませんでした。</p>
+      <p>しかし大学入学の時期から一人旅に行く機会が増えました。</p>
+      <p>東京や栃木などへの日帰りの小旅行もあれば東北や関西に行くこともありました。</p>
+      <p>今年の2月にはヨーロッパへ1か月の旅行へ行ってきました。</p>
+      <p>大学在学中に広島県にある厳島神社へ行きたいと考えています。</p>
+      </div>
+    <!--右側に写真3枚-->
+    <div class="photos">
+      <img src="images/travels1.jpg" alt="大きい写真">
+      <img src="images/travels2.jpg" alt="小さい写真1">
+      <img src="images/travels3.jpg" alt="小さい写真2">
+      </div>
+    </div>
+    </div>
+<!--ここまで-->
+    </div>
+
+    <div id="food" class="page">
+  <h1>ご飯</h1>
+  <!-- 文章＋写真ブロック -->
+  <div class="content-row"><!--foodを追加してたが消した-->
+    <!-- 左側：文章 -->
+    <div class="text">
+      <p>高校生の時から美味しい店を探す事が好きでした。</p>
+      <p>大学生になり、より一層様々なご飯を探すようになりました。</p>
+      <p>最近食べたものの中で印象に残っているものは右の3品です。</p>
+      <p>一番上がイケアのミートボールです。</p>
+      <p>家具屋という印象が強かったですが非常においしかったです。</p>
+      <p>真ん中は表参道にある専門店のフレンチトーストです。</p>
+      <p>専門店ならではの料金ではありましたが</p>
+      <p>今までで一番美味しいフレンチトーストでした。</p>
+      <p>一番下はスカイツリーに内設しているウナギ屋さんのひつまぶしです。</p>
+      <p>アクセスしやすく味もおいしいです。</p>
+
+      </p>
+    </div>
+    <!--div class="photos-wrapper"がここにあった-->
+    <!-- 右側：写真3枚 -->
+    <div class="photos">
+    <img src="images/foods3.jpg" alt="大きいご飯写真2">
+      <img src="images/foods1.jpg" alt="小さいご飯写真">
+      <img src="images/foods2.jpg" alt="小さいご飯写真1">
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+  </main>
+
+
+
+  <script>
+  //ここからJavascriptのコード
+
+  //リストを開く
+  document.querySelectorAll('.dropbtn').forEach(btn => {//リストの処理を設定
+    btn.addEventListener('click', (e) => {//クリックした時の処理
+      e.stopPropagation(); // バグ防止。他のコードをストップ
+      const dropdown = btn.parentElement.querySelector('.dropdown-content');//リストを開く（開閉リストを見つけてドロップダウンに入れる）
+      dropdown.classList.toggle('open');//開閉の処理
+    });
+  });
+
+  //ページを切り替える
+  const navButtons = document.querySelectorAll('.nav-btn');//ボタンをリストに入れる
+  const pages = document.querySelectorAll('.page');//ページを表示する（<div id="home" class="page"などから引っ張ってくる）
+  
+  //
+  navButtons.forEach(button => {//一個ずつこの後の処理をする
+    button.addEventListener('click', () => {//クリックで下の処理を実行
+      const target = button.getAttribute('data-target');//押されたボタンに応じてページを取得
+      pages.forEach(page => {//すべてのページをチェック
+        page.classList.remove('active');//すべてのページを非表示
+        if (page.id === target) {//押したボタンのページを探す
+          page.classList.add('active');//そのページだけ表示
+        }
+      });
+    });
+  });
+</script>
+
+
+
+</body>
+</html>
